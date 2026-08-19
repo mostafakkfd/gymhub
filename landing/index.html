@@ -1,0 +1,504 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GymHub — نظام إدارة النوادي والجيمات | لوحة حية، بوت تيليجرام، إشعارات ذكية</title>
+<meta name="description" content="GymHub: لوحة تحكم حية لإدارة المشتركين والاشتراكات والإشعارات لبضعة دقائق. بوت تيليجرام، تقارير فورية، وأمان كامل. جاهز للتجربة في ناديك.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#14110C" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F2F4F8" media="(prefers-color-scheme: light)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Changa:wght@500;600;700;800&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="logo" aria-label="GymHub">
+      <img src="assets/logo.png" alt="GymHub" class="logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="#features">المميزات</a>
+      <a href="#case">المشكلة والحل</a>
+      <a href="#how">كيف يعمل</a>
+      <a href="#pricing">الباقات</a>
+      <a href="#contact">تواصل معنا</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="التبديل إلى الوضع الفاتح">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+    <button class="burger" id="burger" aria-label="فتح القائمة" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#features">المميزات</a>
+    <a href="#case">المشكلة والحل</a>
+    <a href="#how">كيف يعمل</a>
+    <a href="#pricing">الباقات</a>
+    <a href="#contact">تواصل معنا</a>
+    <a href="#contact" class="btn btn-primary">جرّب مجاناً</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-grid"></div>
+  <div class="hero-beam"></div>
+  <div class="hero-blob"></div>
+  <div class="wrap">
+    <div>
+      <span class="badge"><span class="dot"></span> متاح للتجربة الآن</span>
+      <h1>إدارة النادي كله،<br>من <span class="hl">شاشة واحدة.</span></h1>
+      <p class="lead">نظام بسيط يدير لك المشتركين والاشتراكات والإشعارات. تفتحه من أي جهاز، وبوت تيليجرام يوصّلك بالخبر قبل ما يستعمل النادي أحد ببلاش.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">
+          جرّبها مجاناً
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#case" class="btn btn-ghost">شوف الفرق قبل وبعد</a>
+      </div>
+      <div class="trust">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> جاهز خلال 5 دقائق</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> بوت تيليجرام شغال معك</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> وداعاً للدفتر الورقي</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="dash-mock" aria-hidden="true">
+        <div class="dm-top">
+          <span class="dm-brand">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.4 2 4.6 13.4h5.1L9.1 22l8.8-11.4h-5.1L13.4 2z"/></svg>
+            GymHub
+          </span>
+          <span class="dm-live"><span class="dm-pulse"></span> مباشر</span>
+        </div>
+        <div class="dm-stats">
+          <div class="dm-stat"><strong>248</strong><small>مشترك</small></div>
+          <div class="dm-stat"><strong>196</strong><small>نشط</small></div>
+          <div class="dm-stat dm-up"><strong>18.4k</strong><small>شيكل</small></div>
+        </div>
+        <div class="dm-rows">
+          <div class="dm-row">
+            <span class="dm-av dm-av-g">م</span>
+            <span class="dm-nm"><b>محمد سليم</b><small>شهري · ينتهي 20/08</small></span>
+            <i class="dm-badge ok">نشط</i>
+          </div>
+          <div class="dm-row">
+            <span class="dm-av dm-av-o">ع</span>
+            <span class="dm-nm"><b>عمر خليل</b><small>سنوي · ينتهي 05/09</small></span>
+            <i class="dm-badge warn">قريب</i>
+          </div>
+          <div class="dm-row">
+            <span class="dm-av dm-av-g">ن</span>
+            <span class="dm-nm"><b>نور الهدى</b><small>ربع سنوي · ينتهي 30/11</small></span>
+            <i class="dm-badge ok">نشط</i>
+          </div>
+          <div class="dm-row">
+            <span class="dm-av dm-av-o">ل</span>
+            <span class="dm-nm"><b>ليان عبدالله</b><small>شهري · ينتهي 02/09</small></span>
+            <i class="dm-badge warn">قريب</i>
+          </div>
+        </div>
+        <div class="dm-foot">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> تنبيهان اليوم</span>
+          <span class="dm-tg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> تيليجرام متصل</span>
+        </div>
+      </div>
+      <div class="float-card fc-1">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <span><b>اشتراك مصطفى مُجدّد</b><small>دفع شهري تلقائي</small></span>
+      </div>
+      <div class="float-card fc-2">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        <span><b>ينتهي خلال 5 أيام</b><small>تم إرسال التنبيه</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span>لوحة تحكم حية <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.4 2 4.6 13.4h5.1L9.1 22l8.8-11.4h-5.1L13.4 2z"/></svg></span>
+    <span>إشعارات تلقائية <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.4 2 4.6 13.4h5.1L9.1 22l8.8-11.4h-5.1L13.4 2z"/></svg></span>
+    <span>بوت تيليجرام 24/7 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.4 2 4.6 13.4h5.1L9.1 22l8.8-11.4h-5.1L13.4 2z"/></svg></span>
+    <span>تقارير فورية <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.4 2 4.6 13.4h5.1L9.1 22l8.8-11.4h-5.1L13.4 2z"/></svg></span>
+    <span>عربي 100% <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.4 2 4.6 13.4h5.1L9.1 22l8.8-11.4h-5.1L13.4 2z"/></svg></span>
+    <span>بياناتك بأمان <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.4 2 4.6 13.4h5.1L9.1 22l8.8-11.4h-5.1L13.4 2z"/></svg></span>
+  </div>
+</div>
+
+<section class="metrics">
+  <div class="wrap">
+    <div class="grid">
+      <div class="metric reveal"><div class="num"><span data-count="5">0</span><small>دقائق</small></div><p>وتكون شغال، بدل ساعات الدفتر</p></div>
+      <div class="metric reveal"><div class="num"><span data-count="0">0</span><small>أخطاء</small></div><p>بحساب مواعيد انتهاء الاشتراكات</p></div>
+      <div class="metric reveal"><div class="num"><span data-count="24">0</span><small>/7</small></div><p>تذكير تلقائي يوصلك وين ما كنت</p></div>
+      <div class="metric reveal"><div class="num"><span data-count="100">0</span><small>%</small></div><p>بيانات ناديك ملكك أنت وحدك</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec case" id="case">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker"><span class="knum">01</span><span class="kline"></span> المشكلة الحقيقية</span>
+      <h2>تعبت من الدفتر؟ إحنا عارفين شعورك</h2>
+      <p>كل صباح أوراق تتكدس، وأسماء تننسى، ومشترك ينتهي اشتراكه ويمشي يستعمل النادي من غير ما حد ينتبه. من هالمعاناة، جايي GymHub.</p>
+    </div>
+    <div class="panels">
+      <div class="panel before reveal">
+        <div class="p-head">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
+          قبل: على الدفتر
+        </div>
+        <ul class="case-list">
+          <li class="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg><span>دفتر ضايع، وأسماء مش متذكّرة، والبحث بياخد وقت</span></li>
+          <li class="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg><span>تواريخ الانتهاء بحساب اليد، والغلط وارد كل مرة</span></li>
+          <li class="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg><span>مشترك منتهي، ولا حدا منتبه، وواقف بالصالة مجاناً</span></li>
+          <li class="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg><span>تقرير الشهر يعني ساعة تجميع أرقام بلا نوم</span></li>
+          <li class="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg><span>جهاز ثاني أو فرع جديد؟ الأوراق ما بتسافر معك</span></li>
+          <li class="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg><span>البيانات بأي موظف، بأي ورقة، بأي مكان</span></li>
+        </ul>
+      </div>
+      <div class="panel after reveal">
+        <div class="p-head">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          بعد: مع GymHub
+        </div>
+        <ul class="case-list">
+          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>بحث فوري</strong> بالاسم أو الهاتف، وبيطلع الجواب بثانية</span></li>
+          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>الانتهاء بيحسب نفسه</strong> من الخادم، وغلط الصفر</span></li>
+          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>تنبيه كل صباح</strong> الساعة 9، من غير ما تفتح شي</span></li>
+          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>تقرير الشهر</strong> جاهز بضغطة، وبيطلع بالمليم</span></li>
+          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>سحابة خاصة</strong> لناديك وحدك، بتفتح من أي مكان</span></li>
+          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>صلاحيات لكل موظف</strong>، وكل حدا بشوف اللي بيخصه</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="results">
+      <div class="result-card reveal"><div class="big"><em>5</em> ثوانٍ</div><p>وتوصل لبيانات أي مشترك بالبحث</p></div>
+      <div class="result-card reveal"><div class="big"><em>0</em> أخطاء</div><p>بحساب تواريخ انتهاء الاشتراك</p></div>
+      <div class="result-card reveal"><div class="big"><em>9:00</em> ص</div><p>تنبيه يومي تلقائي للمنتهين</p></div>
+      <div class="result-card reveal"><div class="big"><em>1</em> دقيقة</div><p>وتطلع تقرير الشهر كامل</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="features sec" id="features">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker"><span class="knum">02</span><span class="kline"></span> المميزات</span>
+      <h2>كل اللي يخص النادي، بمكان واحد</h2>
+      <p>كل ميزة كتبناها لأننا احتجناها فعلاً بالشغل اليومي، مش عشان الشكل.</p>
+    </div>
+    <div class="bento">
+      <div class="b-tile feature b-span2 reveal">
+        <span class="tag">لوحة التحكم الحية</span>
+        <div class="t-ic" style="background:var(--color-primary);color:var(--color-ink)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></div>
+        <h3>لوحة تحكم كاملة للنادي</h3>
+        <p>تضيف مشترك، تعدّل، تحذف، وتفلتر من غير ما تفتح أكثر من شاشة. كل شي بينعكس على طول، وبتشتغل من أي جهاز.</p>
+        <div class="shot"><div class="theme-img">
+          <img class="img-dark" src="dashboard-dark.png" alt="واجهة نظام GymHub" loading="lazy">
+          <img class="img-light" src="dashboard-light.png" alt="واجهة نظام GymHub" loading="lazy">
+        </div></div>
+      </div>
+      <div class="b-tile t-green reveal">
+        <span class="tag">بحث وفلترة</span>
+        <div class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>بحث فوري</h3>
+        <p>تكتب الاسم أو رقم الهاتف، وبتطلع النتيجة خلال ثوانٍ.</p>
+        <div class="search-mock" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <span>ابحث بالاسم أو الهاتف...</span>
+        </div>
+        <div class="search-results" aria-hidden="true">
+          <div class="sr-row"><span class="sr-av" style="background:rgba(34,197,94,.2);color:var(--color-accent-text)">م</span><span><b>محمد سليم</b><small>شهري · حتى 20/08</small></span><i class="sr-ok">نشط</i></div>
+          <div class="sr-row"><span class="sr-av" style="background:rgba(249,115,22,.2);color:var(--color-primary-text)">ع</span><span><b>عمر خليل</b><small>سنوي · حتى 05/09</small></span><i class="sr-warn">قريب</i></div>
+        </div>
+      </div>
+      <div class="b-tile t-orange reveal">
+        <span class="tag">اشتراكات ذكية</span>
+        <div class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>الاشتراك بيحسب حاله</h3>
+        <p>خطط جاهزة شهرية وسنوية، وتاريخ الانتهاء بيطلع من الخادم لحاله، بلا أي تدخل بشري.</p>
+      </div>
+      <div class="b-tile t-green reveal">
+        <span class="tag">التنبيهات</span>
+        <div class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
+        <h3>منبه قبل الانتهاء</h3>
+        <p>كل يوم بيذكرك باللي انتهوا، وهاي نهاية استعمال النادي بالمجان.</p>
+      </div>
+      <div class="b-tile t-orange reveal">
+        <span class="tag">بوت تيليجرام</span>
+        <div class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></div>
+        <h3>النادي معك بالجيب</h3>
+        <p>تضيف مشترك أو تسأل عن حالة اشتراك من تيليجرام مباشرة، حتى وانت بتتمرن.</p>
+      </div>
+      <div class="b-tile t-paper reveal">
+        <span class="tag">تقارير</span>
+        <div class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-6 3 4 5-7"/></svg></div>
+        <h3>تقارير جاهزة</h3>
+        <p>عدد المشتركين، المبالغ، النشط والمنتهي، كله تقرير واحد بضغطة.</p>
+      </div>
+      <div class="b-tile t-green b-span2 reveal">
+        <span class="tag">الأمان والخصوصية</span>
+        <div class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>بيانات النادي محمية</h3>
+        <p>كل موظف بيشوف اللي بخصه بس، وما حد بياخذ بيانات غيره. وبياناتك محفوظة بشكل يومي.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec how" id="how">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker"><span class="knum">03</span><span class="kline"></span> شلون نبدأ</span>
+      <h2>ثلاث خطوات، وبس</h2>
+      <p>ما في تركيبات ولا كوابل. تفتح المتصفح وتبدأ.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <h3>راسلنا</h3>
+        <p>واتساب أو تيليجرام. حكيلنا شو نوع ناديك (جيم، كروس فيت، نادٍ رياضي) وكم عدد المشتركين.</p>
+        <span class="chip">دقيقتين من وقتك</span>
+      </div>
+      <div class="step reveal">
+        <h3>احنا بنركب كل شي</h3>
+        <p>بنجهز نسختك السحابية الخاصة، بنربط بوت تيليجرام باسم ناديك، وبننقل بياناتك القديمة إن وجدت.</p>
+        <span class="chip">جاهز خلال ساعات</span>
+      </div>
+      <div class="step reveal">
+        <h3>ابدأ تشتغل</h3>
+        <p>تضيف مشتركين، تراقب الاشتراكات، وتستقبل التنبيهات والتقارير. بلا أوراق وبلا أخطاء.</p>
+        <span class="chip">تدريب مجاني</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="security sec" id="security">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker"><span class="knum">04</span><span class="kline"></span> الأمان</span>
+      <div class="sec-shield">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <h2>بيانات مشتركيك <em>أمانة</em></h2>
+      <p class="lead">هذا شيء ما بنمزح فيه. حماية بيانات ناديك هي أولويتنا الأولى من اليوم الأول.</p>
+      <ul class="sec-list">
+        <li><i>1</i> كل موظف بشوف بس اللي بخصه — ماحدا بيشوف بيانات غيره</li>
+        <li><i>2</i> ما في نسخ من بياناتك عند أحد — كله محفوظ بإسمك فقط</li>
+        <li><i>3</i> صلاحيات متنوعة: مدير يشوف كل شي، موظف يشوف اللي بخصه</li>
+        <li><i>4</i> نسخ احتياطي تلقائي — ما بتخسر بياناتك لو صار شي</li>
+      </ul>
+    </div>
+    <div class="sec-cards">
+      <div class="sec-mini reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>دخول آمن</h3>
+        <p>كل موظف عنده حسابه الخاص بكلمة مروره — لا حسابات مشتركة.</p>
+      </div>
+      <div class="sec-mini reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.6 7.6a5.5 5.5 0 1 1-7.8 7.8 5.5 5.5 0 0 1 7.8-7.8zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
+        <h3>نسخ احتياطي</h3>
+        <p>بياناتك محفوظة باستمرار وبنسخ تلقائي — ما بتضيع أبداً.</p>
+      </div>
+      <div class="sec-mini reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></div>
+        <h3>عربي 100%</h3>
+        <p>واجهة عربية كاملة، وموظفوك بتعلموها بالدقائق.</p>
+      </div>
+      <div class="sec-mini reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+        <h3>يشتغل على أي جهاز</h3>
+        <p>حاسوب أو تابلت أو هاتف، نفس البيانات ونفس الصلاحيات بكل مكان.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker"><span class="knum">05</span><span class="kline"></span> الباقات</span>
+      <h2>سعر واحد ثابت، للجميع</h2>
+      <p>باقة شاملة بكل المميزات بسعر ثابت، وباقة مخصصة للأندية الكبيرة والسلاسل.</p>
+    </div>
+    <div class="grid">
+      <div class="plan featured reveal">
+        <span class="ribbon">الأنسب لناديك</span>
+        <h3>النادي كامل</h3>
+        <p class="who">كل اللي يحتاجه ناديك، مهما كان حجمه</p>
+        <div class="price"><bdi>150</bdi> <small>شيكل / شهرياً</small></div>
+        <p class="price-note">سعر ثابت، كل المميزات، بلا مفاجآت</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>لوحة تحكم حية كاملة</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>اشتراكات وإشعارات ذكية</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>بوت تيليجرام مدمج</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>صلاحيات موظفين متعددة</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>تقارير متقدمة وتصدير</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>نسخة سحابية خاصة</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="width:100%">اطلب التجربة</a>
+      </div>
+      <div class="plan reveal">
+        <h3>باقة مخصصة</h3>
+        <p class="who">للأندية الكبيرة والسلاسل والفروع المتعددة</p>
+        <div class="price">عرض مخصص</div>
+        <p class="price-note">تواصل معنا وبنبني لك عرضاً يناسب حجمك</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>كل مميزات باقة النادي</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>فروع متعددة بإدارة موحدة</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>تقارير موحدة لكل الفروع</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>مدير حساب مخصص</li>
+        </ul>
+        <a href="#contact" class="btn btn-paper" style="width:100%">تواصل معنا</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final sec" id="contact">
+  <div class="wrap">
+    <div class="final-card reveal">
+      <div class="wrap-c">
+        <span class="badge"><span class="dot"></span> جربها أول شي</span>
+        <h2>جهّز ناديك اليوم،<br>وخلّي الدفتر الورقي <em>يتقاعد.</em></h2>
+        <p>راسلنا الحين وبتوخد تجربة مجانية كاملة بنسختك السحابية الخاصة، خلال 24 ساعة كحد أقصى.</p>
+        <div class="final-ctas">
+          <a href="https://t.me/Ha23_8h" target="_blank" rel="noopener" class="btn btn-primary">اطلب تجربتك المجانية</a>
+          <a href="https://wa.me/972597570800" target="_blank" rel="noopener" class="btn btn-paper">كلمنا واتساب</a>
+        </div>
+        <div class="final-chips">
+          <a href="https://t.me/Ha23_8h" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>تيليجرام</a>
+          <a href="mailto:Mostafakhraisus@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>بريد إلكتروني</a>
+          <a href="https://wa.me/972597570800" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>واتساب</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-col">
+        <a href="#top" class="logo" style="margin-bottom:14px">
+          <img src="assets/logo.png" alt="GymHub" class="logo-img" style="height:40px">
+        </a>
+        <p style="font-size:.88rem;max-width:300px;margin-top:8px">نظام إدارة للأندية والجيمات: لوحة حية، اشتراكات ذكية، وبوت تيليجرام بيجاوبك.</p>
+      </div>
+      <div class="foot-col">
+        <h4>الصفحات</h4>
+        <ul>
+          <li><a href="#features">المميزات</a></li>
+          <li><a href="#case">المشكلة والحل</a></li>
+          <li><a href="#how">كيف يعمل</a></li>
+          <li><a href="#pricing">الباقات</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>التواصل</h4>
+        <ul>
+          <li><a href="https://wa.me/972597570800" target="_blank" rel="noopener">واتساب</a></li>
+          <li><a href="https://t.me/Ha23_8h" target="_blank" rel="noopener">تيليجرام</a></li>
+          <li><a href="mailto:Mostafakhraisus@gmail.com">بريد إلكتروني</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 GymHub، جميع الحقوق محفوظة</span>
+      <span class="made"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6.5 5.5 5.5 0 0 1 21.5 12c-2.5 4.4-9.5 9-9.5 9z"/></svg> صُنع بحب بواسطة منارة</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var header = document.querySelector("header");
+  function onScroll(){
+    header.classList.toggle("scrolled", window.scrollY > 40);
+  }
+  window.addEventListener("scroll", onScroll, { passive:true });
+  onScroll();
+
+  /* Theme (dark / light) */
+  var root = document.documentElement;
+  function applyTheme(t){
+    root.setAttribute("data-theme", t);
+    var btn = document.getElementById("themeToggle");
+    if (btn) btn.setAttribute("aria-label", t === "dark" ? "التبديل إلى الوضع الفاتح" : "التبديل إلى الوضع الداكن");
+    try { localStorage.setItem("gymhub-theme", t); } catch (e) {}
+  }
+  var savedTheme = null;
+  try { savedTheme = localStorage.getItem("gymhub-theme"); } catch (e) {}
+  applyTheme(savedTheme || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"));
+  document.getElementById("themeToggle").addEventListener("click", function(){
+    applyTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark");
+  });
+
+  var burger = document.getElementById("burger");
+  var mobileMenu = document.getElementById("mobileMenu");
+  burger.addEventListener("click", function(){
+    var open = mobileMenu.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+    burger.setAttribute("aria-label", open ? "إغلاق القائمة" : "فتح القائمة");
+  });
+  mobileMenu.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", function(){ mobileMenu.classList.remove("open"); burger.setAttribute("aria-expanded","false"); });
+  });
+
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var ro = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add("in"); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el){ ro.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add("in"); });
+  }
+
+  var counters = document.querySelectorAll("[data-count]");
+  var running = false;
+  function animateCounter(el){
+    var target = parseInt(el.getAttribute("data-count"), 10);
+    var dur = 1400;
+    var t0 = null;
+    function step(ts){
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  function startCounters(){
+    if (running) return;
+    counters.forEach(function(el){ animateCounter(el); });
+    running = true;
+  }
+  if ("IntersectionObserver" in window) {
+    var metrics = document.querySelector(".metrics");
+    var mo = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) { startCounters(); mo.disconnect(); } });
+    }, { threshold: 0.3 });
+    if (metrics) mo.observe(metrics);
+  } else { startCounters(); }
+
+  var track = document.getElementById("marqueeTrack");
+  if (track) track.innerHTML += track.innerHTML;
+})();
+</script>
+</body>
+</html>

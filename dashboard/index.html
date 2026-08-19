@@ -1,0 +1,421 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#14110C" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#F2F4F8" media="(prefers-color-scheme: light)">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://ewpjrqdsnmipzwydncxf.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <title>GymHub — نظام الإدارة</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@500;600;700;800&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="toast-container" aria-live="polite"></div>
+
+
+    <div id="login-view">
+        <div class="login-wrap">
+            <aside class="login-aside">
+                <div class="login-monogram">
+                    <div class="login-emblem">
+                        <img class="logo" src="gymhub-logo.png" alt="شعار GymHub">
+                    </div>
+                    <div>
+                        <h1>GymHub</h1>
+                        <p>نظام إدارة النادي</p>
+                    </div>
+                </div>
+                <div class="login-aside-body">
+                    <p class="login-eyebrow">منصة الإدارة الرسمية</p>
+                    <h2>رياضة منظمة،<br><span>إدارة أذكى</span></h2>
+                    <p>كل شي بمكان واحد: المشتركين، الاشتراكات، والتقارير المالية. آمنة وسريعة، وتشتغل من أي جهاز.</p>
+                    <ul class="login-feats">
+                        <li>
+                            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                            <span><strong>إدارة المشتركين</strong><small>سجّل الأعضاء وتابع اشتراكاتهم</small></span>
+                        </li>
+                        <li>
+                            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></span>
+                            <span><strong>تنبيهات ذكية</strong><small>إشعار قبل ما ينتهي الاشتراك</small></span>
+                        </li>
+                        <li>
+                            <span class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+                            <span><strong>تقارير مالية</strong><small>إيرادات شهرية مفصّلة</small></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="login-aside-foot">
+                    <span>GymHub © 2026</span>
+                    <span class="login-status"><span class="status-dot"></span> النظام يعمل</span>
+                </div>
+            </aside>
+            <div class="login-panel">
+                <div class="login-mobile-brand">
+                    <img class="logo" src="gymhub-logo.png" alt="شعار GymHub">
+                    <div>
+                        <strong>GymHub</strong>
+                        <span>نظام إدارة النادي</span>
+                    </div>
+                </div>
+                <div class="login-card">
+                    <div class="login-card-accent" aria-hidden="true"></div>
+                    <h2>تسجيل الدخول</h2>
+                    <p class="login-sub">دخّل بيانات حسابك للوصول إلى لوحة التحكم</p>
+                    <form id="login-form" novalidate>
+                        <div class="field">
+                            <label for="login-email">البريد الإلكتروني</label>
+                            <div class="field-control">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <input type="email" id="login-email" autocomplete="email" placeholder="example@email.com" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="login-password">كلمة المرور</label>
+                            <div class="field-control">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                <input type="password" id="login-password" autocomplete="current-password" placeholder="••••••••" required>
+                            </div>
+                        </div>
+                        <label class="remember-row">
+                            <input type="checkbox" id="remember-me">
+                            <span>تذكرني على هذا الجهاز</span>
+                        </label>
+                        <div id="login-error" class="form-error hidden" role="alert"></div>
+                        <button type="submit" class="btn primary btn-block" id="login-btn">
+                            <span class="btn-label">تسجيل الدخول</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="app-view" class="hidden">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <img class="logo small" src="gymhub-logo.png" alt="شعار GymHub">
+                <div class="brand-text">
+                    <strong>GymHub</strong>
+                    <span>نظام الإدارة</span>
+                </div>
+            </div>
+            <div class="nav-section-label">القائمة الرئيسية</div>
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-view="dashboard">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+                    <span>الرئيسية</span>
+                </button>
+                <button class="nav-item" data-view="members">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <span>المشتركون</span>
+                </button>
+                <button class="nav-item" data-view="alerts">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    <span>التنبيهات</span>
+                    <span class="nav-badge hidden" id="nav-alert-badge">0</span>
+                </button>
+                <button class="nav-item" data-view="reports">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    <span>التقارير</span>
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-chip">
+                    <div class="avatar" id="sidebar-avatar">؟</div>
+                    <div class="user-chip-text">
+                        <strong id="sidebar-user-name">—</strong>
+                        <span id="sidebar-user-role">موظف</span>
+                    </div>
+                </div>
+                <button class="btn ghost btn-block" id="logout-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    <span>تسجيل الخروج</span>
+                </button>
+            </div>
+        </aside>
+
+        <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+        <div class="main">
+            <header class="topbar">
+                <button class="icon-btn menu-toggle" id="menu-toggle" aria-label="القائمة">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+                <h2 id="page-title">الرئيسية</h2>
+                <div class="topbar-actions">
+                    <button class="icon-btn" id="theme-toggle" aria-label="التبديل بين الوضع الفاتح والداكن" title="التبديل بين الوضع الفاتح والداكن">
+                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </button>
+                    <button class="btn primary" id="topbar-add-btn" aria-label="إضافة مشترك جديد">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <span>مشترك جديد</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="content">
+                <div id="global-loader" class="hidden">
+                    <div class="spinner"></div>
+                    <p>جارٍ تحميل البيانات...</p>
+                </div>
+
+                <section id="view-dashboard" class="view active">
+                    <div class="stats-grid" id="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                            <div class="stat-info"><strong id="stat-total-members">0</strong><span>إجمالي المشتركين</span></div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                            <div class="stat-info"><strong id="stat-active">0</strong><span>اشتراكات نشطة</span></div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                            <div class="stat-info"><strong id="stat-expiring">0</strong><span>تنتهي خلال 5 أيام</span></div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                            <div class="stat-info"><strong id="stat-revenue">0</strong><span>إيرادات هذا الشهر</span></div>
+                        </div>
+                    </div>
+                    <div class="panels-grid">
+                        <div class="panel">
+                            <div class="panel-header">
+                                <h3>أحدث المشتركين</h3>
+                                <button class="link-btn" data-go-view="members">عرض الكل</button>
+                            </div>
+                            <div class="table-wrap" id="dashboard-recent-wrap">
+                                <div class="empty-state">لا يوجد مشتركون بعد</div>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-header">
+                                <h3>اشتراكات تنتهي قريبًا</h3>
+                                <button class="link-btn" data-go-view="alerts">عرض الكل</button>
+                            </div>
+                            <div id="dashboard-expiring-wrap" class="expiring-list">
+                                <div class="empty-state">لا توجد تنبيهات</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="view-members" class="view">
+                    <div class="toolbar">
+                        <div class="search-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                            <input type="search" id="member-search" placeholder="ابحث بالاسم أو رقم الهاتف...">
+                        </div>
+                        <div class="filter-chips" id="member-status-filter">
+                            <button class="chip active" data-status="all">الكل</button>
+                            <button class="chip" data-status="active">نشط</button>
+                            <button class="chip" data-status="expiring_soon">قارب على الانتهاء</button>
+                            <button class="chip" data-status="expired">منتهي</button>
+                            <button class="chip" data-status="cancelled">ملغي</button>
+                        </div>
+                    </div>
+                    <div class="panel">
+                            <div class="table-wrap" id="members-table-wrap">
+                                <table class="data-table" id="members-table">
+                                    <thead>
+                                        <tr>
+                                            <th>المشترك</th>
+                                            <th>رقم الهاتف</th>
+                                            <th>الخطة</th>
+                                            <th>تاريخ الانتهاء</th>
+                                            <th>الحالة</th>
+                                            <th>إجراءات</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="members-tbody">
+                                        <tr><td><div class="skeleton avatar"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton" style="width:70%"></div></td><td><div class="skeleton" style="width:60%"></div></td></tr>
+                                        <tr><td><div class="skeleton avatar"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton" style="width:70%"></div></td><td><div class="skeleton" style="width:60%"></div></td></tr>
+                                        <tr><td><div class="skeleton avatar"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton" style="width:70%"></div></td><td><div class="skeleton" style="width:60%"></div></td></tr>
+                                        <tr><td><div class="skeleton avatar"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton" style="width:70%"></div></td><td><div class="skeleton" style="width:60%"></div></td></tr>
+                                        <tr><td><div class="skeleton avatar"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton" style="width:70%"></div></td><td><div class="skeleton" style="width:60%"></div></td></tr>
+                                    </tbody>
+                                </table>
+                                <div class="empty-state hidden" id="members-empty">
+                                    <strong>لا يوجد مشتركون مطابقون</strong>
+                                    <span>أضف أول مشترك للبدء في إدارة الاشتراكات</span>
+                                    <button type="button" class="btn primary sm empty-action">إضافة مشترك جديد</button>
+                                </div>
+                            </div>
+                    </div>
+                </section>
+
+                <section id="view-alerts" class="view">
+                    <div class="filter-chips" id="alerts-filter">
+                        <button class="chip active" data-alert-filter="expiring_soon">تنتهي خلال 5 أيام</button>
+                        <button class="chip" data-alert-filter="expired">منتهية</button>
+                    </div>
+                    <div class="panel">
+                        <div class="table-wrap" id="alerts-table-wrap">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>المشترك</th>
+                                        <th>رقم الهاتف</th>
+                                        <th>الخطة</th>
+                                        <th>تاريخ الانتهاء</th>
+                                        <th>الأيام المتبقية</th>
+                                        <th>تواصل</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="alerts-tbody">
+                                    <tr><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton" style="width:60%"></div></td><td><div class="skeleton" style="width:50%"></div></td></tr>
+                                    <tr><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton" style="width:60%"></div></td><td><div class="skeleton" style="width:50%"></div></td></tr>
+                                    <tr><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton"></div></td><td><div class="skeleton" style="width:60%"></div></td><td><div class="skeleton" style="width:50%"></div></td></tr>
+                                </tbody>
+                            </table>
+                            <div class="empty-state hidden" id="alerts-empty">
+                                <strong>لا توجد تنبيهات حاليًا</strong>
+                                <span>جميع الاشتراكات النشطة بحالة جيدة</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="view-reports" class="view">
+                    <div class="stats-grid small" id="report-stats">
+                        <div class="stat-card"><div class="stat-icon dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8l-5 5"/><path d="M16 8h-4"/><path d="M16 8v4"/></svg></div><div class="stat-info"><strong id="rep-total">0</strong><span>إجمالي الإيرادات</span></div></div>
+                        <div class="stat-card"><div class="stat-icon gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="stat-info"><strong id="rep-month">0</strong><span>إيرادات الشهر الحالي</span></div></div>
+                        <div class="stat-card"><div class="stat-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="stat-info"><strong id="rep-members">0</strong><span>إجمالي المشتركين</span></div></div>
+                        <div class="stat-card"><div class="stat-icon warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="stat-info"><strong id="rep-avg">0</strong><span>متوسط قيمة الاشتراك</span></div></div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-header"><h3>الإيرادات الشهرية — آخر 6 أشهر</h3></div>
+                        <div id="report-chart" class="chart">
+                            <div class="empty-state">لا توجد بيانات بعد</div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-header"><h3>تفصيل الإيرادات حسب الشهر</h3></div>
+                        <div class="table-wrap">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>الشهر</th>
+                                        <th>عدد الاشتراكات</th>
+                                        <th>الإيرادات (شيكل)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="report-monthly-tbody"></tbody>
+                            </table>
+                            <div class="empty-state hidden" id="report-empty">
+                                <strong>لا توجد بيانات بعد</strong>
+                                <span>أضف اشتراكات لعرض تقارير الإيرادات الشهرية</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <div id="member-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="member-modal-title">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="member-modal-title">إضافة مشترك جديد</h2>
+                <button class="icon-btn" type="button" data-close-modal="member-modal" aria-label="إغلاق">&times;</button>
+            </div>
+            <form id="member-form" novalidate>
+                <div class="form-section-title">بيانات المشترك</div>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="m-name">الاسم الكامل <span class="req">*</span></label>
+                        <input type="text" id="m-name" autocomplete="name" placeholder="مثال: أحمد محمد علي">
+                    </div>
+                    <div class="field">
+                        <label for="m-phone">رقم الهاتف <span class="req">*</span></label>
+                        <input type="tel" id="m-phone" autocomplete="tel" placeholder="01xxxxxxxxx" dir="ltr">
+                    </div>
+                    <div class="field">
+                        <label for="m-email">البريد الإلكتروني</label>
+                        <input type="email" id="m-email" autocomplete="email" placeholder="name@example.com" dir="ltr">
+                    </div>
+                    <div class="field">
+                        <label for="m-birth">تاريخ الميلاد</label>
+                        <input type="date" id="m-birth">
+                    </div>
+                    <div class="field">
+                        <label for="m-gender">الجنس</label>
+                        <select id="m-gender">
+                            <option value="">—</option>
+                            <option value="male">ذكر</option>
+                            <option value="female">أنثى</option>
+                            <option value="other">آخر</option>
+                        </select>
+                    </div>
+                    <div class="field full">
+                        <label for="m-notes">ملاحظات</label>
+                        <textarea id="m-notes" rows="2" placeholder="أي ملاحظات إضافية..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section-title">الاشتراك</div>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="m-plan">الخطة <span class="req">*</span></label>
+                        <select id="m-plan" required></select>
+                    </div>
+                    <div class="field">
+                        <label for="m-start">تاريخ البدء <span class="req">*</span></label>
+                        <input type="date" id="m-start" required>
+                    </div>
+                    <div class="field">
+                        <label for="m-price">المبلغ المدفوع (شيكل) <span class="req">*</span></label>
+                        <input type="number" id="m-price" min="0" step="0.01" placeholder="0.00" dir="ltr" required>
+                    </div>
+                    <div class="field">
+                        <label for="m-payment">طريقة الدفع <span class="req">*</span></label>
+                        <select id="m-payment" required>
+                            <option value="cash">نقدي</option>
+                            <option value="card">بطاقة</option>
+                            <option value="transfer">تحويل بنكي</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="m-end">تاريخ الانتهاء (محسوب تلقائيًا)</label>
+                        <input type="date" id="m-end" readonly class="readonly-input">
+                    </div>
+                </div>
+
+                <div id="member-form-error" class="form-error hidden" role="alert"></div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn ghost" data-close-modal="member-modal">إلغاء</button>
+                    <button type="submit" class="btn primary" id="member-save-btn">
+                        <span class="btn-label">حفظ المشترك</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="confirm-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+        <div class="modal small">
+            <div class="modal-header">
+                <h2 id="confirm-title">تأكيد الحذف</h2>
+            </div>
+            <p class="confirm-text" id="confirm-message"></p>
+            <div class="modal-actions">
+                <button type="button" class="btn ghost" data-close-modal="confirm-modal">إلغاء</button>
+                <button type="button" class="btn danger" id="confirm-delete-btn">
+                    <span class="btn-label">حذف نهائي</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.bundle.js"></script>
+</body>
+</html>
